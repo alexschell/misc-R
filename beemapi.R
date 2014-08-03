@@ -49,10 +49,10 @@ BmndrSubmit <- function(goal, value, comment = "", midnight = 0, date = "") {
                goal, "/datapoints.json?auth_token=", auth.token, sep = "")
   
   datapoint <- list(
-        timestamp <- as.numeric(as.POSIXct(paste(date, "12:00:00"))),
-        value <- as.character(value),
-        comment <- comment,
-        updated_at <- as.numeric(as.POSIXct(Sys.time())))
+        timestamp = as.numeric(as.POSIXct(paste(date, "12:00:00"))),
+        value = as.character(value),
+        comment = comment,
+        updated_at = as.numeric(as.POSIXct(Sys.time())))
 
   postForm(URL, style = "post", .params = datapoint)
   # success check: BmndrLastDatapoint()[4] == value
