@@ -3,12 +3,12 @@
 ## by exponential moving average.
 
 # TODO: replace index-based averaging with time-based averaging
-# Not huge priority: see tagtime_trends_timestamps.png
+# Not huge priority: https://github.com/alexschell/misc-R/blob/master/tagtime_trends_timestamps.png
 
 library("TTR")
 
 log.path <- "path/to/tagtime/log/file"  # CHANGEME
-tags <- c("prod3", "prod0", "slp", "proj", "work")
+tags <- c("prod3", "prod0", "slp", "proj", "work")  # CHANGEME
   # vector of tag names (or regular expressions) to plot trends of
   # should be roughly similar in frequency
 sma.window <- 50  # window size for simple moving average
@@ -44,3 +44,5 @@ for (i in 1:length(tags)) {
   plot(ema[,i], type = "l", ylim = range(ema), ylab = "",
        main = paste("Time spent on", colnames(ema)[i], "(hrs/wk)"))
 }
+
+# Example: https://github.com/alexschell/misc-R/blob/master/tagtime_trends_sample.png
