@@ -51,7 +51,7 @@ par(mfrow = c(n.rows, n.cols))
 for (i in 1:n.tags) {
   plot(histograms[[i]], main = paste("Time spent on ", tags[i]), 
        col = "aliceblue", border = "white", ylim = c(0, ymax), 
-       ylab = "Hours per week", xaxt = 'n')
+       ylab = "Hours per week", xaxt = 'n', xlab = "")
   x.label.int <- seq(min(dat$time), max(dat$time), length = 8)
   x.label.str <- as.Date(as.POSIXct(x.label.int, origin = "1970-01-01"))
   axis(side = 1, at = x.label.int, labels = x.label.str)
