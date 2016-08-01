@@ -64,22 +64,22 @@ splint = function(x, f=3) {
   x.int
 }
 
-# Test
-set.seed(45394)
-N = 200
-freq = 4
-x.orig = cumsum(rnorm(N, 0, 1))
-x.agg = rep(NA, N/freq)
-x.const = rep(x.agg, each=freq)
-for (i in 1:(N/freq)) x.agg[i] = mean(x.orig[((i-1)*freq+1):(i*freq)])
-
-plot(x.orig, type="l")
-lines(x.const, col="red")
-
-x.int = splint(x.agg, f=freq)
-plot(x.const, type="l")
-lines(x.int, col="red")
-
-plot(x.orig, type="l")
-lines(x.int, col="red")
-lines(x.const, col="blue")
+# # Test
+# set.seed(45394)
+# N = 200
+# freq = 4
+# x.orig = cumsum(rnorm(N, 0, 1))
+# x.agg = rep(NA, N/freq)
+# x.const = rep(x.agg, each=freq)
+# for (i in 1:(N/freq)) x.agg[i] = mean(x.orig[((i-1)*freq+1):(i*freq)])
+# 
+# plot(x.orig, type="l")
+# lines(x.const, col="red")
+# 
+# x.int = splint(x.agg, f=freq)
+# plot(x.const, type="l")
+# lines(x.int, col="red")
+# 
+# plot(x.orig, type="l")
+# lines(x.int, col="red")
+# lines(x.const, col="blue")
